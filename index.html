@@ -25,7 +25,6 @@ body{
     color:white;
     background:url("estadio1.jpg") no-repeat center center/cover;
     position:relative;
-    overflow:hidden;
 }
 
 /* OVERLAY */
@@ -48,9 +47,7 @@ body::before{
 h1{
     font-size:42px;
     font-weight:900;
-    line-height:1.2;
     margin-bottom:20px;
-    text-shadow:0 0 20px rgba(0,0,0,0.8);
 }
 
 /* TEXTO */
@@ -65,14 +62,19 @@ h1{
     font-weight:bold;
 }
 
-/* INFO URGÊNCIA */
-.urgency{
-    font-size:14px;
-    margin-bottom:20px;
-    color:#ff4d4d;
+/* CAIXA CONTADORES */
+.counter-box{
+    background:rgba(34,197,94,0.15);
+    border:2px solid #22c55e;
+    border-radius:20px;
+    padding:18px;
+    margin-bottom:25px;
+    box-shadow:0 0 25px rgba(34,197,94,0.6);
+    font-size:15px;
+    line-height:1.8;
 }
 
-/* BOTÃO */
+/* BOTÃO PRINCIPAL */
 .button{
     display:inline-block;
     background:#22c55e;
@@ -82,32 +84,34 @@ h1{
     padding:16px 50px;
     border-radius:50px;
     text-decoration:none;
-    transition:0.3s ease;
+    transition:all 0.3s ease;
     animation:glowPulse 1.5s infinite;
 }
 
+/* HOVER */
 .button:hover{
-    transform:scale(1.08);
+    transform:translateY(-6px) scale(1.08);
+    box-shadow:
+        0 0 20px #22c55e,
+        0 0 40px #22c55e,
+        0 0 60px #22c55e;
 }
 
-/* PROVA SOCIAL */
-.proof{
-    margin-top:20px;
-    font-size:14px;
-    color:#cccccc;
+/* CLIQUE */
+.button:active{
+    transform:scale(0.95);
 }
 
 /* GLOW */
 @keyframes glowPulse{
-    0%{ box-shadow:0 0 15px rgba(34,197,94,0.6); }
-    50%{ box-shadow:0 0 50px rgba(34,197,94,1); }
-    100%{ box-shadow:0 0 15px rgba(34,197,94,0.6); }
+    0%{ box-shadow:0 0 10px rgba(34,197,94,0.6); }
+    50%{ box-shadow:0 0 35px rgba(34,197,94,1); }
+    100%{ box-shadow:0 0 10px rgba(34,197,94,0.6); }
 }
 
 /* RESPONSIVO */
 @media(max-width:768px){
     h1{ font-size:32px; }
-    .subtext{ font-size:16px; }
     .button{ font-size:18px; padding:14px 30px; }
 }
 
@@ -118,9 +122,7 @@ h1{
 
 <div class="container">
 
-    <h1>
-        🔥 ENTRE PARA O <br> GRUPO FREE 🔥
-    </h1>
+    <h1>🔥 ENTRE PARA O GRUPO FREE 🔥</h1>
 
     <p class="subtext">
         Receba dicas exclusivas para todos os dias do 
@@ -128,26 +130,22 @@ h1{
         <span class="highlight">Chama o Green.</span>
     </p>
 
-    <div class="urgency">
-        ⏳ Oferta disponível por: <span id="timer">05:00</span><br>
-        🔥 Apenas <span id="spots">25</span> vagas restantes<br>
-        👥 <span id="online">147</span> pessoas online agora
+    <div class="counter-box">
+        ⏳ Oferta disponível por: <strong><span id="timer">01:00</span></strong><br>
+        🔥 Apenas <strong><span id="spots">22</span></strong> vagas restantes<br>
+        👥 <strong><span id="online">27</span></strong> pessoas online agora
     </div>
 
     <a href="https://wa.me/55SEUNUMEROAQUI" class="button">
         🚀 QUERO MEU ACESSO GRÁTIS
     </a>
 
-    <p class="proof">
-        Assertividade de 95%
-    </p>
-
 </div>
 
 <script>
 
-/* CONTADOR 5 MINUTOS */
-let duration = 5 * 60;
+/* CONTADOR 1 MINUTO */
+let duration = 60;
 let timer = duration;
 const timerDisplay = document.getElementById("timer");
 
@@ -165,8 +163,8 @@ setInterval(function(){
     }
 }, 1000);
 
-/* VAGAS DIMINUINDO */
-let spots = 25;
+/* VAGAS DIMINUINDO (COMEÇA EM 22) */
+let spots = 22;
 const spotsDisplay = document.getElementById("spots");
 
 setInterval(function(){
@@ -174,15 +172,19 @@ setInterval(function(){
         spots--;
         spotsDisplay.textContent = spots;
     }
-}, 8000);
+}, 7000);
 
-/* PESSOAS ONLINE VARIANDO */
+/* ONLINE CRESCENTE (COMEÇA EM 27) */
+let online = 27;
 const onlineDisplay = document.getElementById("online");
 
 setInterval(function(){
-    let randomOnline = Math.floor(Math.random() * (180 - 120) + 120);
-    onlineDisplay.textContent = randomOnline;
-}, 5000);
+    online += Math.floor(Math.random() * 3);
+    if(online > 120){
+        online = 80;
+    }
+    onlineDisplay.textContent = online;
+}, 4000);
 
 </script>
 
