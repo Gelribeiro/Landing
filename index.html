@@ -3,70 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grupo Secreto VIP</title>
+<title>Landing Page Premium</title>
 
 <style>
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-  background:
-    linear-gradient(135deg,#FFD700,#C68642):
-    url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-align:center;
+/* FUNDO DOURADO METÁLICO */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #BF953F 0%,
+        #FCF6BA 25%,
+        #B38728 50%,
+        #FBF5B7 75%,
+        #AA771C 100%
+    );
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container{
-  max-width:500px;
-  padding:40px 20px;
+/* CONTAINER CENTRAL */
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    padding: 50px 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
-h1{
-  font-size:32px;
-  margin-bottom:20px;
+/* TÍTULO */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-p{
-  font-size:18px;
-  margin-bottom:30px;
-  opacity:0.9;
+/* TEXTO */
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
-.botao{
-  display:inline-block;
-  padding:15px 40px;
-  font-size:20px;
-  background:#00ff88;
-  color:#000;
-  text-decoration:none;
-  border-radius:50px;
-  font-weight:bold;
-  transition:0.3s;
-  box-shadow:0 0 20px rgba(0,255,136,0.6);
+/* BOTÃO */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    background: linear-gradient(90deg, #FFD700, #B8860B);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-.botao:hover{
-  background:#00cc6a;
-  transform:scale(1.05);
-}
-
-.distintivo{
-  margin-top:20px;
-  font-size:14px;
-  opacity:0.8;
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 </style>
@@ -75,16 +84,10 @@ p{
 <body>
 
 <div class="container">
+    <h1>🚀 Entre para o Grupo Secreto</h1>
+    <p>Ganhe acesso exclusivo e aumente seus resultados agora mesmo.</p>
+    <a href="#" class="btn">QUERO ENTRAR AGORA</a>
+</div>
 
-<h1>🔥 ENTRE PARA O GRUPO FREE 🔥</h1>
-
-<p>
-Receba oportunidades exclusivas todos os dias do BOT FLY.<br>
-Chama o Green.
-</p>
-
-<a class="botao" href="https://chat.whatsapp.com/JW7a3wArlRCGJgnOeQxCXP">
-ENTRE AGORA
-</a>
-
-<div class="distintivo
+</body>
+</html>
