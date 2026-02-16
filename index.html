@@ -1,93 +1,145 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Landing Page Premium</title>
+import Head from "next/head";
 
-<style>
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Grupo Free | BOT FLY</title>
+        <meta
+          name="description"
+          content="Entre para o Grupo Free e receba oportunidades exclusivas todos os dias."
+        />
+      </Head>
 
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+      <main className="hero">
+        <div className="overlay"></div>
+
+        <div className="content">
+          <h1>
+            🔥 ENTRE PARA O <br /> GRUPO FREE 🔥
+          </h1>
+
+          <p className="subtext">
+            Receba oportunidades exclusivas todos os dias do{" "}
+            <span className="highlight">BOT FLY</span>.
+            <br />
+            <span className="highlight">Chama o Green.</span>
+          </p>
+
+          <a
+            href="https://wa.me/55SEUNUMEROAQUI"
+            className="glow-button"
+          >
+            🚀 QUERO MEU ACESSO GRÁTIS
+          </a>
+
+          <p className="proof">Assertividade de 95%</p>
+        </div>
+      </main>
+
+      <style jsx global>{`
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+          background: black;
+        }
+
+        .hero {
+          position: relative;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: white;
+          background-image: url('/stadium.jpg');
+          background-size: cover;
+          background-position: center;
+          overflow: hidden;
+        }
+
+        .overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.75);
+        }
+
+        .content {
+          position: relative;
+          z-index: 2;
+          max-width: 500px;
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 40px;
+          font-weight: 900;
+          line-height: 1.2;
+          margin-bottom: 20px;
+          text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .subtext {
+          font-size: 18px;
+          color: #e5e5e5;
+          margin-bottom: 30px;
+        }
+
+        .highlight {
+          color: #22c55e;
+          font-weight: bold;
+        }
+
+        .glow-button {
+          display: inline-block;
+          background: #22c55e;
+          color: black;
+          font-weight: bold;
+          font-size: 20px;
+          padding: 15px 40px;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: transform 0.3s ease;
+          animation: glowPulse 1.5s infinite;
+        }
+
+        .glow-button:hover {
+          transform: scale(1.08);
+        }
+
+        .proof {
+          margin-top: 20px;
+          font-size: 14px;
+          color: #ccc;
+        }
+
+        @keyframes glowPulse {
+          0% {
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+          }
+          50% {
+            box-shadow: 0 0 45px rgba(34, 197, 94, 1);
+          }
+          100% {
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+          }
+        }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 32px;
+          }
+
+          .subtext {
+            font-size: 16px;
+          }
+
+          .glow-button {
+            font-size: 18px;
+            padding: 14px 30px;
+          }
+        }
+      `}</style>
+    </>
+  );
 }
-
-/* FUNDO DOURADO METÁLICO */
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(
-        135deg,
-        #BF953F 0%,
-        #FCF6BA 25%,
-        #B38728 50%,
-        #FBF5B7 75%,
-        #AA771C 100%
-    );
-    background-attachment: fixed;
-    background-size: cover;
-    min-height: 100vh;
-    color: #111;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* CONTAINER CENTRAL */
-.container {
-    text-align: center;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(8px);
-    padding: 50px 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-/* TÍTULO */
-h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* TEXTO */
-p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-/* BOTÃO */
-.btn {
-    display: inline-block;
-    padding: 15px 35px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-    background: linear-gradient(90deg, #FFD700, #B8860B);
-    border-radius: 50px;
-    text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-    <h1>🚀 Entre para o Grupo Secreto</h1>
-    <p>Ganhe acesso exclusivo e aumente seus resultados agora mesmo.</p>
-    <a href="#" class="btn">QUERO ENTRAR AGORA</a>
-</div>
-
-</body>
-</html>
